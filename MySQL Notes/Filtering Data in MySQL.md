@@ -85,5 +85,56 @@ Used to constraint the number of rows returned by the `SELECT` statement.
 ```sql
 SELECT * FROM Faculty LIMIT 4;
 ```
+2. Find the 2nd and 3rd row from the faculty table
+```sql
+SELECT * FROM Faculty LIMIT 1,2;
+```
+3. Find the student name with second highest mark
+```sql
+SELECT Sname FROM Student ORDER BY Marks DESC LIMIT 1,1;
+```
+### `NULL` Operator
+---
+This is used to check whether the value is null or, not.
 
+1. Find the student name who is not alloted to any branch
+```sql
+SELECT Sname FROM Student WHERE Branch IS NULL;
+```
+2. Find the student name who are alllocated to at leastone branch
+```sql
+SELECT Sname FROM student WHERE Branch IS NOT NULL;
+```
+### `LIKE` Operator
+---
+- Used to select rows/data based on patterns. Following two wildcard characters are used with the Like operator.
+- percentage(%) - it matches any string of zero or, more characters.
+- underscore(_) - it matches exactly one single character. */
+
+Examples -:
+
+1. Find faculty details whose name starts with letter "A"
+```sql
+SELECT * FROM faculty WHERE Fname LIKE 'A%';
+```
+2. Find faculty details whose name ends with letter "N"
+```sql
+SELECT * FROM faculty WHERE Fname LIKE '%N';
+```
+3. Student name and marks where the second letter in the student name is "A".
+```sql
+SELECT sname, marks FROM student WHERE Sname LIKE '_A%';
+```
+4. student name and marks where the student name starts with "P" and consists of exactly 5 letters.
+```sql
+SELECT sname, marks FROM student WHERE Sname LIKE 'P____';
+```
+5. Find faculty details whose name not ends with letter "N"
+```sql
+SELECT * FROM faculty WHERE Fname NOT LIKE '%N';
+```
+6. Student name and marks where the second letter in the student name is not "A".
+```sql
+SELECT sname, marks FROM student WHERE Sname NOT LIKE '_A%';
+```
 
