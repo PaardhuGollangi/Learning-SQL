@@ -4,7 +4,7 @@ USE college ;
 /* 
 > JOIN is a method of linking one table with another table.
 > Various types of join available in MySQL are -:
-	1. Cross Join
+    1. Cross Join
     2. Inner Join
     3. Left Join
     4. Right Join
@@ -133,7 +133,7 @@ SELF JOIN
 CREATE TABLE employee(eid int, ename varchar(20), esuper int);
 
 INSERT INTO employee VALUES (1, "Mahesh", 2),
-							(2, "Ramesh", 3),
+			    (2, "Ramesh", 3),
                             (3, "Suresh", 4);
                             
 SELECT e.ename AS "Employee Name", s.ename AS "Supervisor Name" FROM
