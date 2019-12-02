@@ -18,7 +18,7 @@ CROSS JOIN
 -----------
 > It returns the cartesian product of rows from the joined tables.
 > Syntax -:
-	SELECT * FROM 
+    SELECT * FROM 
     table1 CROSS JOIN table2
     WHERE join_condition[optional]
 */
@@ -62,12 +62,12 @@ SAMPLE QUERIES
 
 -- 1. Find department name of each faculty.
 
-SELECT Fname , Deptname
+SELECT Fname , Dname
 FROM faculty INNER JOIN department ON faculty.Deptid = department.Deptid;
 
 -- Or, we can use alias to shorten the query as follows -:
 
-SELECT f.Fname, d.Deptname 
+SELECT f.Fname, d.Dname 
 FROM faculty f INNER JOIN department d ON f.Deptid = d.Deptid;
 
 -- 2. Find department name of faculty working in department ID 2.
@@ -95,7 +95,7 @@ SAMPLE QUERIES
 
 -- 1. Perform left join between faculty and department table.
 
-SELECT f.Fname, d.Deptname
+SELECT f.Fname, d.Dname
 FROM faculty f LEFT JOIN department d ON f.Deptid = d.Deptid;
 
 /*
@@ -118,7 +118,7 @@ SAMPLE QUERIES
 
 -- 1. Perform right join between faculty and department table.
 
-SELECT f.Fname, d.Deptname
+SELECT f.Fname, d.Dname
 FROM faculty f RIGHT JOIN department d ON f.Deptid = d.Deptid;
 
 /*
