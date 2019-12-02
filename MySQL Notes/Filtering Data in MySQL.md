@@ -80,5 +80,10 @@ SELECT * FROM Student WHERE Marks NOT BETWEEN 50 AND 90;
 ```
 ### `LIMIT` Statement
 ---
+Used to constraint the number of rows returned by the `SELECT` statement.
+1. Find the first 4 records from the faculty table
+```sql
+SELECT * FROM Faculty LIMIT 4;
+```
 
 
