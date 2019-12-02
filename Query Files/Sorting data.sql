@@ -1,4 +1,4 @@
-use college;
+USE college;
 
 /*
 Order By Clause
@@ -10,22 +10,22 @@ Used to sort the result from the select statement
 
 -- 1. sort by ascending student name
 
-select * from student;
-select * from student order by sname;
-select * from student order by sname desc;
+SELECT * FROM student;
+SELECT * FROM student ORDER BY sname;
+SELECT * FROM student ORDER BY sname DESC;
 
 -- 2. sort by descending marks
 
-select * from student order by marks desc;
+SELECT * FROM student ORDER BY marks DESC;
 
 -- 3. sort by name in ascending and marks in descending
 
-select * from student order by sname asc, Marks desc;
+SELECT * FROM student ORDER BY sname ASC, Marks DESC;
 
 -- 4. custom sort
 
-select * from faculty;
-select * from faculty order by field(qualification, "M.Tech", "Ph.D", "B.Tech");
+SELECT * FROM faculty;
+SELECT * FROM faculty ORDER BY field(qualification, "M.Tech", "Ph.D", "B.Tech");
 
 
 
