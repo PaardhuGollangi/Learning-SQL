@@ -1,33 +1,35 @@
+-- Using the "college" database
+
 USE college;
 
-/*
-Order By Clause
-------------------
-
-Used to sort the result from the select statement.
-*/
+-- ORDER BY
+-- ============
 
 -- 1. Sort by ascending student name
 
-SELECT * FROM student;
-SELECT * FROM student ORDER BY sname;
-SELECT * FROM student ORDER BY sname DESC;
+SELECT *
+FROM student
+ORDER BY sname;
 
--- 2. Sort by descending marks
+-- 2. Sort by descending student name
+SELECT *
+FROM student
+ORDER BY sname DESC;
 
-SELECT * FROM student ORDER BY marks DESC;
+-- 3. Sort by descending marks
 
--- 3. Sort by name in ascending and marks in descending
+SELECT *
+FROM student
+ORDER BY marks DESC;
 
-SELECT * FROM student ORDER BY sname ASC, Marks DESC;
+-- 4. Sort by name in ascending and marks in descending
 
--- 4. Custom Sort
+SELECT *
+FROM student
+ORDER BY sname ASC, Marks DESC;
 
-SELECT * FROM faculty;
-SELECT * FROM faculty ORDER BY field(qualification, "M.Tech", "Ph.D", "B.Tech");
+-- 5. Custom Sorting
 
-
-
-
-
-
+SELECT *
+FROM faculty
+ORDER BY field(qualification, "M.Tech", "Ph.D", "B.Tech");
