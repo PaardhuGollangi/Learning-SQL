@@ -36,7 +36,7 @@ USE College;
 For creating `Faculty` table in the college database :
 
 ```sql
-CREATE TABLE faculty (Fid int, Fname varchar(100), Qualification varchar(50), Deptid int);
+CREATE TABLE Faculty (Fid int, Fname varchar(100), Qualification varchar(50), Deptid int);
 ```
 
 For creating a `Student` table :
