@@ -108,6 +108,7 @@ MINUS
 SELECT Col1, Col2, ...
 FROM Table2_name
 ```
+
 Unfortunately, MySQL doesn't support `MINUS` operator as well.
 
 But, we can achieve the result of `MINUS` operation by using sub-queries as follows :
@@ -116,3 +117,24 @@ But, we can achieve the result of `MINUS` operation by using sub-queries as foll
 
 1. _Find those faculty names who are not allocated to any department_
 
+```sql
+SELECT Fname FROM Faculty
+WHERE Deptid IN
+(
+	SELECT f.Deptid FROM Faculty f
+	LEFT JOIN Department d ON f.Deptid = d.Deptid
+	WHERE d.Deptid IS NULL
+);
+```
+
+We can achieve the same result in other databases, by executing the following query :
+
+```sql
+SELECT Fname FROM Faculty
+WHERE Deptid IN
+(
+	SELECT Deptid FROM Faculty
+	MINUS
+	SELECT Deptid FROM Department;
+);
+```
