@@ -105,7 +105,9 @@ CREATE TABLE faculty
 To make the column of an existing table as `NOT NULL` :
 
 - Check whether that column has any null value or, not.
+
 - If the column has some null values then, first we need to update those null values into some suitable non-null values.
+
 - After ensuring that the column doesn't contain any null values, we can safely assign the `NOT NULL` constraint to it.
 
 ##### `UNIQUE` Constraint :
@@ -366,6 +368,47 @@ To remove the `Marks` column from the `Student` table :
 ```sql
 ALTER TABLE Student
 DROP COLUMN Sname;
+```
+
+#### Renaming Column
+
+To rename the `Sname` column from the `Student` table to `StudentName`:
+
+```sql
+ALTER TABLE Student
+RENAME COLUMN Sname TO StudentName;
+```
+
+#### Constraint Modification
+
+To set `NOT NULL` constraint to an existing column :
+
+```sql
+ALTER TABLE table_name
+CHANGE col_name col_name datatype NOT NULL;
+```
+
+So, to change `Fname` column of `Faculty` table to `NOT NULL` :
+
+```sql
+ALTER TABLE Faculty
+CHANGE Fname Fname VARCHAR(100) NOT NULL;
+```
+
+We can modify other constraints in the similar fashion as well.
+
+To set a column of an existing table as primary key :
+
+```sql
+ALTER TABLE table_name
+ADD PRIMARY KEY(col_name)
+```
+
+So, to make the `Fid` column of `Faculty` table as PK :
+
+```sql
+ALTER TABLE Faculty
+ADD PRIMARY KEY(Fid)
 ```
 
 ### `RENAME` Statement
