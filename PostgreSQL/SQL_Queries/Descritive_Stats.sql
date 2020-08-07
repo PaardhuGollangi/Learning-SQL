@@ -3,7 +3,8 @@
 
 -- Viewing the 'store_sales' table
 
-SELECT * FROM store_sales;
+SELECT *
+FROM store_sales;
 
 -- Counting Data --
 -- ============= --
@@ -11,16 +12,19 @@ SELECT * FROM store_sales;
 
 -- Counting total number of rows
 
-SELECT COUNT(*) FROM store_sales;
+SELECT COUNT(*)
+FROM store_sales;
 
 -- Counting total number of rows per each month
 
 SELECT
 	month_of_year,
 	COUNT(*)
-FROM 
-	store_sales 
+FROM
+	store_sales
 GROUP BY 
+	month_of_year
+ORDER BY
 	month_of_year;
 
 -- Maximum & Minimum --
@@ -44,13 +48,16 @@ FROM
 	store_sales
 GROUP BY
 	month_of_year
+ORDER BY
+	month_of_year;
 
 -- Summation & Average --
 -- =================== --
 
 -- Total items sold
 
-SELECT SUM(units_sold) FROM store_sales;
+SELECT SUM(units_sold)
+FROM store_sales;
 
 -- Total & average items sold by each month of the year
 
@@ -61,6 +68,8 @@ SELECT
 FROM
 	store_sales
 GROUP BY
+	month_of_year
+ORDER BY
 	month_of_year;
 
 -- Variance & Standard Deviation --
@@ -77,6 +86,8 @@ SELECT
 FROM
 	store_sales
 GROUP BY
+	month_of_year
+ORDER BY
 	month_of_year;
 
 -- Rounding-off Numbers --
@@ -86,14 +97,15 @@ GROUP BY
 
 SELECT
 	month_of_year,
-	SUM(units_sold),
+	SUM(units_sold) AS Total_items_sold,
 	ROUND(AVG(units_sold),2) AS rounded_average,
 	ROUND(VAR_POP(units_sold),2) AS rounded_variance,
 	ROUND(STDDEV_POP(units_sold),2) AS rounded_std_dev
 FROM
 	store_sales
 GROUP BY
+	month_of_year
+ORDER BY
 	month_of_year;
-
 
 
